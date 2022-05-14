@@ -4,8 +4,28 @@ import Header from "./Header";
 import InputTodo from "./InputTodo";
 import TodosList from "./TodosList";
 import { v4 as uuidv4 } from "uuid";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxWidth: '600px',
+    margin: '0 auto'
+  },
+  inner: {
+    width: '100%',
+    padding: '8rem 10px 4rem'
+  }
+
+}), { name: 'TodoContainer' })
+
 const TodoContainer = (): JSX.Element => {
 
+  const classes = useStyles();
   const getTodoList = (): Todo[] => {
     return [{
       id: 'a',
@@ -48,9 +68,14 @@ const TodoContainer = (): JSX.Element => {
   const [todoList, setTodoList] = useState(getTodoList());
 
   return (<>
-    <Header></Header>
-    <InputTodo addTodoProps={addTodo}></InputTodo>
-    <TodosList todos={todoList} changeTodoStatus={changeTodoStatus} deleteTodoProps={deleteTodo}></TodosList>
+    <div className={classes.container}>
+      <div className={classes.inner}>
+        <Header></Header>
+        <InputTodo addTodoProps={addTodo}></InputTodo>
+        <TodosList todos={todoList} changeTodoStatus={changeTodoStatus} deleteTodoProps={deleteTodo}></TodosList>
+      </div>
+    </div>
+
   </>)
 }
 
