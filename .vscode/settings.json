@@ -1,0 +1,29 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.validate": ["javascript"],
+    "eslint.options": {
+      "extensions": [".js", ".ts", "html"]
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "search.exclude": {
+      "**/node_modules": true
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "javascript.suggestionActions.enabled": false,
+    "jest.jestCommandLine": "node scripts\\test.js --config config\\jest.config.js",
+    "jest.autoRun": {
+      "watch": false,
+      "onSave": "test-file",
+      "onStartup": ["all-tests"]
+    }
+  }
+  
