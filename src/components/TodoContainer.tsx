@@ -50,6 +50,18 @@ const TodoContainer = (): JSX.Element => {
     }))
   }
 
+  const editTodo = (id: string, title: string) => {
+    setTodoList(todoList.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          title: title
+        }
+      }
+      return todo;
+    }))
+  }
+
   const deleteTodo = (id: string) => {
     setTodoList([...todoList.filter(todo => {
       return todo.id !== id;
@@ -72,7 +84,7 @@ const TodoContainer = (): JSX.Element => {
       <div className={classes.inner}>
         <Header></Header>
         <InputTodo addTodoProps={addTodo}></InputTodo>
-        <TodosList todos={todoList} changeTodoStatus={changeTodoStatus} deleteTodoProps={deleteTodo}></TodosList>
+        <TodosList todos={todoList} changeTodoStatus={changeTodoStatus} deleteTodoProps={deleteTodo} editTodoProps={editTodo}></TodosList>
       </div>
     </div>
 

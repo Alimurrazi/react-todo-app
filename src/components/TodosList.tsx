@@ -4,13 +4,13 @@ import TodoItem from "./TodoItem";
 interface Props {
   todos: Todo[];
   changeTodoStatus: (id: string) => void;
-  deleteTodoProps: (id: string) => void
+  deleteTodoProps: (id: string) => void;
+  editTodoProps: (id: string, title: string) => void;
 }
 
-const TodosList = ({ todos, changeTodoStatus, deleteTodoProps }: Props): JSX.Element => {
-  console.log(todos);
+const TodosList = ({ todos, changeTodoStatus, deleteTodoProps, editTodoProps }: Props): JSX.Element => {
   return (<>{todos.map(todo =>
-    <TodoItem todo={todo} key={todo.id} changeTodoStatus={changeTodoStatus} deleteTodoProps={deleteTodoProps}></TodoItem>
+    <TodoItem todo={todo} key={todo.id} changeTodoStatus={changeTodoStatus} deleteTodoProps={deleteTodoProps} editTodoProps={editTodoProps}></TodoItem>
   )}</>)
 }
 

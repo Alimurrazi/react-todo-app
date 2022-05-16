@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     outline: 'none',
     border: 'none'
   },
-
   inputSubmit: {
     background: 'transparent',
     color: '#5b5b5b',
@@ -45,7 +44,6 @@ const InputTodo = ({ addTodoProps }: Props): JSX.Element => {
 
   const [title, setTitle] = useState('');
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setTitle(e.target.value);
   }
 
